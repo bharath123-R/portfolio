@@ -1,220 +1,154 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bharath R — Portfolio</title>
   <meta name="description" content="Portfolio of Bharath R — Cloud, DevOps & Automation Enthusiast" />
+  <!-- Use Inter font from Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- AOS (Animate on Scroll) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <!-- Typed.js for typing effect -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-<style>
-    :root{
-      --bg:#0f1724;
-      --card:#0b1220;
-      --accent:#0ea5a4;
-      --muted:#94a3b8;
-      --glass: rgba(255,255,255,0.05);
-      --maxw:100%;
-      color-scheme: dark;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;font-family:Inter,system-ui,Roboto;background:linear-gradient(180deg,var(--bg),#05060a);color:#e6eef6;scroll-behavior:smooth}
-    .container{max-width:var(--maxw);margin:0 auto;padding:32px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;position:sticky;top:0;background:rgba(15,23,36,0.8);backdrop-filter:blur(12px);z-index:50;padding:12px 24px;border-radius:12px}
-    .brand{display:flex;align-items:center;gap:12px;animation:fadeInDown 1s ease}
-    .avatar-img img{width:56px;height:56px;border-radius:50%;object-fit:cover;display:block;border:2px solid var(--accent);box-shadow:0 0 12px rgba(14,165,164,0.4)}
-    nav a{color:var(--muted);text-decoration:none;margin-left:18px;position:relative}
-    nav a::after{content:'';position:absolute;width:0;height:2px;left:0;bottom:-4px;background:var(--accent);transition:width .3s}
-    nav a:hover{color:var(--accent)}
-    nav a:hover::after{width:100%}
-
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin:64px 0;animation:fadeInUp 1.2s ease}
-    .intro h1{font-size:clamp(28px,4vw,42px);margin:0 0 10px;line-height:1.3}
-    .intro p{color:var(--muted);margin:0 0 18px;line-height:1.6}
-    .cta{display:flex;gap:12px}
-    .btn{background:linear-gradient(90deg,var(--accent),#60a5fa);padding:10px 18px;border-radius:12px;color:#04111a;font-weight:600;text-decoration:none;transition:transform .2s}
-    .btn:hover{transform:translateY(-3px);box-shadow:0 4px 14px rgba(0,0,0,0.4)}
-    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.1);color:var(--muted)}
-
-    .card{background:var(--card);padding:20px;border-radius:16px;box-shadow:0 6px 18px rgba(2,6,23,0.7);transition:transform .3s, box-shadow .3s}
-    .card:hover{transform:translateY(-6px);box-shadow:0 12px 24px rgba(2,6,23,0.9)}
-
-    .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .skills ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
-    .skills li{background:var(--glass);padding:8px 14px;border-radius:999px;color:var(--muted);font-weight:600;transition:background .3s}
-    .skills li:hover{background:rgba(14,165,164,0.2);color:#fff}
-
-    .projects .project-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-    .project{padding:16px;border-radius:14px;background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.06);transition:transform .3s, box-shadow .3s}
-    .project:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 8px 20px rgba(0,0,0,0.5)}
-    .project h4{margin:0 0 6px;color:var(--accent)}
-    .project p{margin:0;color:var(--muted);font-size:0.95rem}
-
-    footer{margin:64px 0 24px;color:var(--muted);font-size:0.92rem;text-align:center}
-
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
-      .avatar-img img{width:48px;height:48px}
-      nav a{display:none}
-    }
-
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes fadeInDown{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
-  
-    @media(max-width:600px){
-      .cta{flex-direction:column;align-items:flex-start}
-      iframe{height:900px!important}
-      .hero{margin:32px 0}
-    }
-
-</style>
+  <!-- Include Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Include Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb25W+K0bJg5C1aP8j5Rk6y7P1L1K1d1aQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- AOS (Animate On Scroll) library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="avatar-img"><img src="images/avatar.jpg" alt="Bharath R"></div>
+<body class="bg-gradient-to-b from-slate-900 to-black text-slate-200 font-sans leading-relaxed min-h-screen">
+  <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+    <!-- Header & Navigation -->
+    <header class="flex items-center justify-between gap-4 sticky top-0 bg-slate-900/80 backdrop-blur-lg z-50 p-3 md:p-4 rounded-xl mb-6 shadow-md" data-aos="fade-down">
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-teal-500 shadow-teal-500/50 shadow-md">
+          <img src="images/avatar.jpg" alt="Bharath R" class="w-full h-full object-cover">
+        </div>
         <div>
-          <div style="font-weight:700;font-size:1.1rem">Bharath R</div>
-          <div style="font-size:0.86rem;color:var(--muted)">Cloud • DevOps • Automation</div>
+          <div class="font-bold text-lg">Bharath R</div>
+          <div class="text-sm text-slate-400">Cloud • DevOps • Automation</div>
         </div>
       </div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+      <nav class="hidden sm:block">
+        <a href="#about" class="text-slate-400 hover:text-teal-500 ml-4 md:ml-6 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-teal-500 hover:after:w-full after:transition-all after:duration-300">About</a>
+        <a href="#projects" class="text-slate-400 hover:text-teal-500 ml-4 md:ml-6 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-teal-500 hover:after:w-full after:transition-all after:duration-300">Projects</a>
+        <a href="#skills" class="text-slate-400 hover:text-teal-500 ml-4 md:ml-6 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-teal-500 hover:after:w-full after:transition-all after:duration-300">Skills</a>
+        <a href="#contact" class="text-slate-400 hover:text-teal-500 ml-4 md:ml-6 transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-teal-500 hover:after:w-full after:transition-all after:duration-300">Contact</a>
       </nav>
     </header>
 
-    <section class="hero" data-aos="fade-up">
-      <div class="intro">
-        <h1>Hi — I'm <span style="color:var(--accent)">Bharath R</span><br><small style="color:var(--muted);font-weight:600"><span id="typed"></span></small></h1>
-        <p>Passionate Computer Science student with strong fundamentals in programming and a growing interest in Cloud Computing and DevOps. I enjoy building automation workflows, deploying apps, and documenting processes clearly. Currently pursuing my B.E. in Computer Science (CGPA: 7.44).</p>
-        <div class="cta">
-          <a class="btn" href="tel:+916374985844">Call Me</a>
-          <a class="btn secondary" href="Bharath_resume.pdf" download>Download Resume</a>
+    <!-- Hero Section -->
+    <section class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center my-16" data-aos="fade-up">
+      <div class="space-y-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+          Hi — I'm <span class="text-teal-500">Bharath R</span><br>
+          <small class="text-slate-400 font-semibold text-2xl md:text-3xl">Cloud, DevOps & QA Enthusiast</small>
+        </h1>
+        <p class="text-slate-400 text-lg">Passionate Computer Science student with strong fundamentals in programming and a growing interest in Cloud Computing and DevOps. I enjoy building automation workflows, deploying apps, and documenting processes clearly. Currently pursuing my B.E. in Computer Science (CGPA: 7.44).</p>
+        <div class="flex gap-3">
+          <a class="px-5 py-3 rounded-xl font-bold bg-gradient-to-r from-teal-500 to-blue-500 text-slate-900 transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-teal-500/30" href="tel:+916374985844">Call Me</a>
+          <a class="px-5 py-3 rounded-xl font-bold bg-transparent border border-slate-700 text-slate-400 transition-colors duration-300 hover:text-slate-200 hover:border-slate-500" href="Bharath_resume.pdf" download>Download Resume</a>
         </div>
       </div>
-
-      <div class="card" style="animation:fadeInUp 1.4s ease">
-        <h3 style="margin-top:0">Quick Info</h3>
-        <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:bharathr1130@gmail.com" style="color:var(--accent)">bharathr1130@gmail.com</a></p>
-        <p><i class="fa-brands fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/bharathr-devops" style="color:var(--accent)">linkedin.com/in/bharathr-devops</a></p>
-        <p><i class="fa-brands fa-github"></i> GitHub: <a href="https://github.com/bharath123-R" style="color:var(--accent)">github.com/bharath123-R</a></p>
-        <p><i class="fa-solid fa-phone"></i> Phone: <a href="tel:+916374985844" style="color:var(--accent)">+91 63749 85844</a></p>
-        <p>Location: Tamil Nadu, India</p>
+      <div class="bg-slate-800 p-6 rounded-2xl shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-slate-950/70" data-aos="zoom-in" data-aos-delay="200">
+        <h3 class="text-xl font-bold mb-3 text-teal-500">Quick Info</h3>
+        <ul class="space-y-2">
+            <li class="flex items-center gap-3 text-slate-400"><i class="fas fa-envelope text-teal-500"></i> Email: <a href="mailto:bharathr1130@gmail.com" class="text-teal-500 hover:underline">bharathr1130@gmail.com</a></li>
+            <li class="flex items-center gap-3 text-slate-400"><i class="fab fa-linkedin text-teal-500"></i> LinkedIn: <a href="https://www.linkedin.com/in/bharathr-devops" class="text-teal-500 hover:underline">linkedin.com/in/bharathr-devops</a></li>
+            <li class="flex items-center gap-3 text-slate-400"><i class="fab fa-github text-teal-500"></i> GitHub: <a href="https://github.com/bharath123-R" class="text-teal-500 hover:underline">github.com/bharath123-R</a></li>
+            <li class="flex items-center gap-3 text-slate-400"><i class="fas fa-phone text-teal-500"></i> Phone: <a href="tel:+916374985844" class="text-teal-500 hover:underline">+91 63749 85844</a></li>
+            <li class="flex items-center gap-3 text-slate-400"><i class="fas fa-map-marker-alt text-teal-500"></i> Location: Tamil Nadu, India</li>
+        </ul>
       </div>
     </section>
 
-    <section id="about" data-aos="fade-up" class="card" style="margin-bottom:20px;animation:fadeInUp 1.6s ease">
-      <h3 style="margin-top:0">About Me</h3>
-      <p style="color:var(--muted);line-height:1.6">I am a dedicated Computer Science student specializing in Cloud and DevOps. Skilled in Python, Selenium, GitHub, and automation workflows, I combine technical knowledge with creativity from my design background. With hands-on hardware training, coding experience, and internships, I am eager to contribute to real-world projects while continuously learning.</p>
+    <!-- About Section -->
+    <section id="about" class="bg-slate-800 p-6 rounded-2xl shadow-xl mb-8 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-slate-950/70" data-aos="fade-up" data-aos-delay="400">
+      <h3 class="text-2xl font-bold mb-2 text-teal-500">About Me</h3>
+      <p class="text-slate-400">I am a dedicated Computer Science student specializing in Cloud and DevOps. Skilled in Python, Selenium, GitHub, and automation workflows, I combine technical knowledge with creativity from my design background. With hands-on hardware training, coding experience, and internships, I am eager to contribute to real-world projects while continuously learning.</p>
     </section>
 
-    <div class="grid">
-      <section id="projects" data-aos="fade-up" class="projects card" style="animation:fadeInUp 1.8s ease">
-        <h3 style="margin-top:0">Projects</h3>
-        <div class="project-list">
-          <article class="project">
-            <h4>WhatsApp Automation</h4>
-            <p>Automated WhatsApp message/media sending using Python & Selenium WebDriver. Integrated Excel-based data for contact management, improving efficiency.</p>
-            <a href="https://github.com/bharath123-R">View repo →</a>
+    <!-- Projects & Skills Section -->
+    <div class="grid lg:grid-cols-2 gap-8">
+      <section id="projects" class="projects space-y-4" data-aos="fade-right">
+        <h3 class="text-2xl font-bold text-teal-500 mb-4">Projects</h3>
+        <div class="grid gap-6">
+          <article class="p-6 rounded-2xl bg-white/5 border border-slate-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+            <h4 class="text-xl font-bold text-teal-500 mb-2">WhatsApp Automation</h4>
+            <p class="text-slate-400 text-sm">Automated WhatsApp message/media sending using Python & Selenium WebDriver. Integrated Excel-based data for contact management, improving efficiency.</p>
+            <a href="https://github.com/bharath123-R" class="text-teal-500 hover:underline mt-2 inline-block">View repo →</a>
           </article>
-
-          <article class="project">
-            <h4>Logic IC Tester (IoT)</h4>
-            <p>Built an IC testing tool using microcontrollers to detect errors in digital circuits. Strengthened knowledge of hardware and IoT systems.</p>
-            <a href="#">View details →</a>
+          <article class="p-6 rounded-2xl bg-white/5 border border-slate-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
+            <h4 class="text-xl font-bold text-teal-500 mb-2">Logic IC Tester (IoT)</h4>
+            <p class="text-slate-400 text-sm">Built an IC testing tool using microcontrollers to detect errors in digital circuits. Strengthened knowledge of hardware and IoT systems.</p>
+            <a href="#" class="text-teal-500 hover:underline mt-2 inline-block">View details →</a>
           </article>
-        
-          <article class="project" data-aos="fade-up">
-            <h4>OA Testing Assignment</h4>
-            <p>A software testing assignment project showcasing manual and automation test case design and bug reporting. Hosted on GitHub with full documentation.</p>
-            <a href="https://github.com/bharath123-R/OA-Testing-Assignment" target="_blank">View repo →</a>
-          </article>
-
-          <article class="project" data-aos="fade-up">
-            <h4>My First Cloud Site</h4>
-            <p>A simple cloud-hosted static website deployed as a first project on cloud platforms. Demonstrates basics of hosting and CI/CD pipelines.</p>
-            <a href="https://github.com/bharath123-R/my-first-cloud-site" target="_blank">View repo →</a>
-          </article>
-
         </div>
       </section>
 
-      <aside class="skills card" data-aos="fade-up" id="skills" style="animation:fadeInUp 2s ease">
-        <h3 style="margin-top:0">Skills</h3>
-        <ul>
-          <li>Python</li>
-          <li>C</li>
-          <li>Selenium WebDriver</li>
-          <li>Git & GitHub</li>
-          <li>Cloud & DevOps Basics</li>
-          <li>Documentation Tools</li>
-          <li>Design: Canva, Photoshop, Illustrator</li>
-          <li>Windows & Linux</li>
-          <li>PC Assembly & Troubleshooting</li>
-        </ul>
-
-        <div style="margin-top:18px">
-          <h4>Education</h4>
-          <p>B.E. — Computer Science & Engineering (2022–2026)<br>Asan Memorial College of Engg & Tech (CGPA: 7.44)</p>
-          <p>HSC — Govt. Hr. Sec. School, Anjur (2022) — 63.5%</p>
+      <aside class="skills space-y-4" data-aos="fade-left">
+        <div class="bg-slate-800 p-6 rounded-2xl shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-slate-950/70">
+          <h3 class="text-2xl font-bold mb-4 text-teal-500">Skills</h3>
+          <ul class="flex flex-wrap gap-2 list-none p-0 m-0">
+            <li class="bg-white/5 px-3 py-1.5 rounded-full text-sm font-semibold text-slate-400 transition-colors hover:bg-teal-500/20 hover:text-white flex items-center gap-2"><i class="fab fa-python text-lg text-teal-500"></i> Python</li>
+            <li class="bg-white/5 px-3 py-1.5 rounded-full text-sm font-semibold text-slate-400 transition-colors hover:bg-teal-500/20 hover:text-white flex items-center gap-2"><i class="fas fa-file-code text-lg text-teal-500"></i> C</li>
+            <li class="bg-white/5 px-3 py-1.5 rounded-full text-sm font-semibold text-slate-400 transition-colors hover:bg-teal-500/20 hover:text-white flex items-center gap-2"><i class="fas fa-robot text-lg text-teal-500"></i> Selenium WebDriver</li>
+            <li class="bg-white/5 px-3 py-1.5 rounded-full text-sm font-semibold text-slate-400 transition-colors hover:bg-teal-500/20 hover:text-white flex items-center gap-2"><i class="fab fa-github text-lg text-teal-500"></i> Git & GitHub</li>
+            <li class="bg-white/5 px-3 py-1.5 rounded-full text-sm font-semibold text-slate-400 transition-colors hover:bg-teal-500/20 hover:text-white flex items-center gap-2"><i class="fas fa-cloud text-lg text-teal-500"></i> Cloud & DevOps Basics</li>
+            <li class="bg-white/5 px-3 py-1.5 rounded-full text-sm font-semibold text-slate-400 transition-colors hover:bg-teal-500/20 hover:text-white flex items-center gap-2"><i class="fas fa-file-alt text-lg text-teal-500"></i> Documentation Tools</li>
+            <li class="bg-white/5 px-3 py-1.5 rounded-full text-sm font-semibold text-slate-400 transition-colors hover:bg-teal-500/20 hover:text-white flex items-center gap-2"><i class="fas fa-palette text-lg text-teal-500"></i> Design: Canva, Photoshop, Illustrator</li>
+            <li class="bg-white/5 px-3 py-1.5 rounded-full text-sm font-semibold text-slate-400 transition-colors hover:bg-teal-500/20 hover:text-white flex items-center gap-2"><i class="fas fa-desktop text-lg text-teal-500"></i> Windows & Linux</li>
+            <li class="bg-white/5 px-3 py-1.5 rounded-full text-sm font-semibold text-slate-400 transition-colors hover:bg-teal-500/20 hover:text-white flex items-center gap-2"><i class="fas fa-cogs text-lg text-teal-500"></i> PC Assembly & Troubleshooting</li>
+          </ul>
         </div>
 
-        <div style="margin-top:18px">
-          <h4>Achievements</h4>
-          <p>3rd Prize — Technical Hackathon</p>
-          <p>3rd Prize — “Electrowar” Circuit Event</p>
+        <div class="bg-slate-800 p-6 rounded-2xl shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-slate-950/70" data-aos="fade-up" data-aos-delay="200">
+          <h4 class="text-xl font-bold text-teal-500 mb-2">Education</h4>
+          <p class="text-sm text-slate-400">B.E. — Computer Science & Engineering (2022–2026)<br>Asan Memorial College of Engg & Tech (CGPA: 7.44)</p>
+          <p class="text-sm text-slate-400 mt-2">HSC — Govt. Hr. Sec. School, Anjur (2022) — 63.5%</p>
+        </div>
+
+        <div class="bg-slate-800 p-6 rounded-2xl shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-slate-950/70" data-aos="fade-up" data-aos-delay="400">
+          <h4 class="text-xl font-bold text-teal-500 mb-2">Achievements</h4>
+          <p class="text-sm text-slate-400">3rd Prize — Technical Hackathon</p>
+          <p class="text-sm text-slate-400 mt-2">3rd Prize — “Electrowar” Circuit Event</p>
         </div>
       </aside>
     </div>
 
-    <section id="contact" data-aos="fade-up" class="card" style="margin-top:20px;animation:fadeInUp 2.2s ease">
-      <h3 style="margin-top:0">Contact</h3>
-      <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:bharathr1130@gmail.com" style="color:var(--accent)">bharathr1130@gmail.com</a><br><i class="fa-solid fa-phone"></i> Phone: <a href="tel:+916374985844" style="color:var(--accent)">+91 63749 85844</a><br><i class="fa-brands fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/bharathr-devops" style="color:var(--accent)">linkedin.com/in/bharathr-devops</a></p>
+    <!-- Contact Section -->
+    <section id="contact" class="bg-slate-800 p-6 rounded-2xl shadow-xl mt-8 transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-slate-950/70" data-aos="fade-up">
+      <h3 class="text-2xl font-bold mb-2 text-teal-500">Contact</h3>
+      <p class="text-sm text-slate-400">Email: <a href="mailto:bharathr1130@gmail.com" class="text-teal-500 hover:underline">bharathr1130@gmail.com</a><br>Phone: <a href="tel:+916374985844" class="text-teal-500 hover:underline">+91 63749 85844</a><br>LinkedIn: <a href="https://www.linkedin.com/in/bharathr-devops" class="text-teal-500 hover:underline">linkedin.com/in/bharathr-devops</a></p>
 
-      
-  <!-- Google Form Embed -->
-  <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSexgQAI53bizY2lZlUvuy6mhPulbA4e_VCBxmrvW_0Tq4a20g/viewform?embedded=true" 
-    width="640" 
-    height="800" 
-    frameborder="0" 
-    marginheight="0" 
-    marginwidth="0">
-    Loading…
-  </iframe>
-
+      <div class="mt-4">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSexgQAI53bizY2lZlUvuy6mhPulbA4e_VCBxmrvW_0Tq4a20g/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0" class="rounded-xl">Loading…</iframe>
+      </div>
     </section>
 
-    <footer>
-      <p>Built with ♥ by <span style="color:var(--accent)">Bharath R</span> • <a href="https://github.com/bharath123-R" style="color:var(--accent)">GitHub</a></p>
+    <!-- Footer -->
+    <footer class="mt-16 mb-4 text-center text-sm text-slate-500">
+      <div class="flex justify-center gap-4 mb-2">
+        <a href="https://github.com/bharath123-R" aria-label="GitHub Profile" class="text-slate-400 hover:text-teal-500 transition-colors">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/bharathr-devops" aria-label="LinkedIn Profile" class="text-slate-400 hover:text-teal-500 transition-colors">
+          <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+      </div>
+      <p>Built with ♥ by <span class="text-teal-500">Bharath R</span></p>
     </footer>
   </div>
 
+  <!-- AOS (Animate on Scroll) initialization script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init({ duration: 1000, once: true });
-
-    var typed = new Typed('#typed', {
-      strings: ['Cloud Enthusiast', 'DevOps Learner', 'QA & Automation Engineer'],
-      typeSpeed: 60,
-      backSpeed: 40,
-      loop: true
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: 'ease-out-back',
     });
   </script>
-
 </body>
 </html>
